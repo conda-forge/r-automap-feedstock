@@ -13,9 +13,9 @@ source:
   sha256: 8ab5e344cde57557e1b25e346d85b331f041eb821d7c46f6bf2cf5fa90b8e04b
 
 build:
-  noarch: generic
-  merge_build_host: true  # [win]
+  merge_build_host: True  # [win]
   number: 0
+  noarch: generic
   rpaths:
     - lib/R/lib/
     - lib/
@@ -23,16 +23,21 @@ build:
 requirements:
   build:
     - {{ posix }}zip               # [win]
+    - cross-r-base {{ r_base }}    # [build_platform != target_platform]
   host:
     - r-base
+    - r-ggplot2
     - r-gstat
     - r-lattice
+    - r-maptools
     - r-reshape
     - r-sp >=0.9_55
   run:
     - r-base
+    - r-ggplot2
     - r-gstat
     - r-lattice
+    - r-maptools
     - r-reshape
     - r-sp >=0.9_55
 
@@ -46,7 +51,8 @@ about:
   license: GPL-2.0-or-later
   summary: This package performs an automatic interpolation by automatically estimating the variogram and then calling gstat.
   license_family: GPL
-  license_file: {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3
+  license_file:
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3
 
 extra:
   recipe-maintainers:
