@@ -1,4 +1,4 @@
-{% set version = "1.1-1" %}
+{% set version = "1.1-9" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/automap_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/automap/automap_{{ version }}.tar.gz
-  sha256: 1aa8c721fb321b722a15fb9b4e23dcac8122e87155721a69084f1a839f8f8686
+  sha256: f3070aed385352d2595ceddd74cb03cd71965f2e60b675832d16ec2ead6f3a43
 
 build:
   merge_build_host: true  # [win]
