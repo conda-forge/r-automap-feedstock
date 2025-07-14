@@ -1,4 +1,4 @@
-{% set version = "1.1-16" %}
+{% set version = "1.1-20" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,7 +9,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/automap_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/automap/automap_{{ version }}.tar.gz
-  sha256: ca7a72f996b17e75beabbedaad090847eca57c43cf18d471cc56c9769baa776f
+  sha256: 9f17322f57e5439df1a8cbaeacec605c6685558cf62f4dec0529bf900c6d98ed
 
 build:
   number: 0
